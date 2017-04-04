@@ -18,8 +18,8 @@ def get_prime(bits_q):
 def get_f(X,degree_f, bits_q):
     flag_irreducible = False
     while (not flag_irreducible):
-        #f_vec = [ZZ.random_element(-int(2^(10)-1),int(2^(10)-1)) for _ in range(degree_f+1)]
-        f_vec = [ZZ.random_element(-int(2^(bits_q/(2*(degree_f+1)))),int(2^(bits_q/(2*(degree_f+1))))) for _ in range(degree_f+1)]
+        f_vec = [ZZ.random_element(-int(2^(10)-1),int(2^(10)-1)) for _ in range(degree_f+1)]
+        #f_vec = [ZZ.random_element(-int(2^(bits_q/(2*(degree_f+1)))),int(2^(bits_q/(2*(degree_f+1))))) for _ in range(degree_f+1)]
 
         norm_f = max(map(abs,f_vec))
         f_poly = X(list(f_vec))
@@ -29,7 +29,7 @@ def get_f(X,degree_f, bits_q):
 #get g poly
 def get_g(g1,x,bits_p,degree_f,norm_f):
     g0 = ZZ.random_element(-int(2^(bits_p/degree_f)/norm_f),int(2^(bits_p/degree_f)/norm_f))
-    g_poly = g1*x+g0
+    g_poly = x+g1
     return g_poly,g0
 def get_G(f_poly,g_poly):
     G_temp = f_poly.sylvester_matrix(g_poly,variable=x)
@@ -47,12 +47,12 @@ def get_their_poly(X):
 
 ### Parameters ###
 degree_f = 6
-bits_q = 127 #
+bits_q = 63 #
 bits_p = bits_q+1 #2q+1
 
 ## Other Variables ##
 count_primes = 0
-NumIt = 1000
+NumIt = 100
 
 ### Main Execution
 t0 = time()
