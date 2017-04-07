@@ -1,0 +1,16 @@
+\frametitle{Helper Functions}
+\textbf{Poly g}
+ \begin{lstlisting}
+def get_g(g1,x,bits_p,degree_f,norm_f):
+    g0 = ZZ.random_element(-int(2^(bits_p/degree_f)/norm_f),int(2^(bits_p/degree_f)/norm_f))
+    #g0 = ZZ.random_element(1,int(2^(bits_p/degree_f)/norm_f))
+    g_poly = g1*x+g0
+    return g_poly,g0
+        \end{lstlisting}
+\textbf{Poly G}
+\begin{lstlisting}
+def get_G(f_poly,g_poly):
+    G_temp = f_poly.sylvester_matrix(g_poly,variable=x)
+    G_poly = G_temp.determinant()-1
+    return G_poly
+\end{lstlisting}

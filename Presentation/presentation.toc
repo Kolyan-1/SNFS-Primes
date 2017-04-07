@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.36pt}
+\beamer@sectionintoc {1}{Importance}{3}{0}{1}
+\beamer@sectionintoc {2}{Method and Code}{5}{0}{2}
+\beamer@sectionintoc {3}{Some Analysis}{10}{0}{3}

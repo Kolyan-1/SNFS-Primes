@@ -20,6 +20,7 @@ def get_f(X,degree_f, bits_q):
     while (not flag_irreducible):
         #f_vec = [ZZ.random_element(-int(2^(10)-1),int(2^(10)-1)) for _ in range(degree_f+1)]
         f_vec = [ZZ.random_element(-int(2^(bits_q/(2*(degree_f+1)))),int(2^(bits_q/(2*(degree_f+1))))) for _ in range(degree_f+1)]
+        #f_vec = [ZZ.random_element(1,int(2^(bits_q/(2*(degree_f+1))))) for _ in range(degree_f+1)]
 
         norm_f = max(map(abs,f_vec))
         f_poly = X(list(f_vec))
@@ -29,6 +30,7 @@ def get_f(X,degree_f, bits_q):
 #get g poly
 def get_g(g1,x,bits_p,degree_f,norm_f):
     g0 = ZZ.random_element(-int(2^(bits_p/degree_f)/norm_f),int(2^(bits_p/degree_f)/norm_f))
+    #g0 = ZZ.random_element(1,int(2^(bits_p/degree_f)/norm_f))
     g_poly = g1*x+g0
     return g_poly,g0
 def get_G(f_poly,g_poly):
@@ -41,18 +43,24 @@ def get_their_poly(X):
     f_poly  = X(f_coefs)
     norm_f = 1385
     return f_poly,norm_f
-#################
-#main script
-#################
+
+    
+######################################################################################
+######################################################################################
+######################################################################################
+############           main script
+######################################################################################
+######################################################################################
+######################################################################################
 
 ### Parameters ###
-degree_f = 6
-bits_q = 127 #
+degree_f = 8
+bits_q = 63 #
 bits_p = bits_q+1 #2q+1
 
 ## Other Variables ##
 count_primes = 0
-NumIt = 1000
+NumIt = 500
 
 ### Main Execution
 t0 = time()
@@ -77,15 +85,17 @@ for i in range(NumIt):
         g_poly,g0 = get_g(g1,x,bits_p,degree_f, norm_f)
 
         G_poly = get_G(f_poly,g_poly)
-        T2 = T(G_poly.coefficients())
+        temp = list(G_poly.coefficients())
+        temp.reverse()
+        T2 = T(temp)
         if len(T2.roots())>0:
             flag_roots=False
     # getting roots
     r    = T2.roots()
     root = r[0][0]
     rt   = int(root)
-    #while(rt<int(2^(bits_p/degree_f)/norm_f)):
-     #   rt+=q
+#    while(rt<int(2^(bits_p/degree_f)/norm_f)):
+#        rt+=q
     p    = X([G_poly(1,rt)+1])
 
 
@@ -96,7 +106,7 @@ for i in range(NumIt):
     else:
         dummy123=0#print('Not swapping signs')
     if is_prime(p):
-        print('p is prime')
+        print('p is prime with bits:'+str(ceil(log(p,base=2))))
         if(mod(p-1,q)==0):
             count_primes+=1
             print(str(p)+','+str(degree_f)+','+str(bits_q)+','+str(ceil(log(p,base=2))))

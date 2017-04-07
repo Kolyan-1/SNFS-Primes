@@ -28,7 +28,8 @@ def get_f(X,degree_f, bits_q):
     return f_poly,norm_f
 #get g poly
 def get_g(g1,x,bits_p,degree_f,norm_f):
-    g0 = ZZ.random_element(-int(2^(bits_p/degree_f)/norm_f),int(2^(bits_p/degree_f)/norm_f))
+    #g0 = ZZ.random_element(-int(2^(bits_p/degree_f)/norm_f),int(2^(bits_p/degree_f)/norm_f))
+    g0 =0
     g_poly = x+g1
     return g_poly,g0
 def get_G(f_poly,g_poly):
@@ -41,18 +42,23 @@ def get_their_poly(X):
     f_poly  = X(f_coefs)
     norm_f = 1385
     return f_poly,norm_f
-#################
-#main script
-#################
+
+######################################################################################
+######################################################################################
+######################################################################################
+############           main script
+######################################################################################
+######################################################################################
+######################################################################################
 
 ### Parameters ###
 degree_f = 6
-bits_q = 63 #
+bits_q = 511 #
 bits_p = bits_q+1 #2q+1
 
 ## Other Variables ##
 count_primes = 0
-NumIt = 100
+NumIt = 10
 
 ### Main Execution
 t0 = time()
@@ -77,7 +83,9 @@ for i in range(NumIt):
         g_poly,g0 = get_g(g1,x,bits_p,degree_f, norm_f)
 
         G_poly = get_G(f_poly,g_poly)
-        T2 = T(G_poly.coefficients())
+        temp = list(G_poly.coefficients())
+        temp.reverse()
+        T2 = T(temp)
         if len(T2.roots())>0:
             flag_roots=False
     # getting roots
