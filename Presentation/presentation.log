@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  7 APR 2017 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.23)  7 APR 2017 10:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1194,12 +1194,48 @@ Overfull \hbox (0.4pt too wide) in paragraph at lines 168--168
 
 ] [10
 
-] (./presentation.bbl)
-Overfull \hbox (0.4pt too wide) in paragraph at lines 182--182
+]
+\openout4 = `presentation.vrb'.
+
+ (./presentation.vrb <Data.png, id=94, 654.445pt x 167.62625pt>
+File: Data.png Graphic file (type png)
+
+<use Data.png>
+Package pdftex.def Info: Data.png used on input line 5.
+(pdftex.def)             Requested size: 276.559pt x 70.8348pt.
+)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 184--184
 [][]  
  []
 
 [11
+
+ <./Data.png>]
+\openout4 = `presentation.vrb'.
+
+ (./presentation.vrb
+<together.png, id=102, 1124.2pt x 843.15pt>
+File: together.png Graphic file (type png)
+ <use together.png>
+Package pdftex.def Info: together.png used on input line 5.
+(pdftex.def)             Requested size: 276.559pt x 207.41623pt.
+)
+Overfull \hbox (0.4pt too wide) in paragraph at lines 194--194
+[][]  
+ []
+
+
+Overfull \vbox (21.07425pt too high) detected at line 194
+ []
+
+[12
+
+ <./together.png (PNG copy)>] (./presentation.bbl)
+Overfull \hbox (30.74774pt too wide) in paragraph at lines 204--204
+[][]  
+ []
+
+[13
 
  </usr/local/texlive/2015basic/texmf-dist/tex/latex/beamer/art/beamericonarticl
 e.pdf>]
@@ -1212,20 +1248,14 @@ e.pdf>]
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 207.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 207.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 207.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 207.
+Package rerunfilecheck Info: File `presentation.out' has not changed.
+(rerunfilecheck)             Checksum: CF0701B8EAF15289757D76950DFFC2D4;143.
 
-
-Package rerunfilecheck Warning: File `presentation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `presentation.out':
-(rerunfilecheck)             Before: 58D6D939DECA699E427D4C9E7671708F;142
-(rerunfilecheck)             After:  CF0701B8EAF15289757D76950DFFC2D4;143.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1233,13 +1263,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 207.
  ) 
 Here is how much of TeX's memory you used:
- 22101 strings out of 494501
- 435116 string characters out of 6167030
+ 22122 strings out of 494501
+ 435380 string characters out of 6167030
  731424 words of memory out of 5000000
- 24854 multiletter control sequences out of 15000+600000
+ 24864 multiletter control sequences out of 15000+600000
  9104 words of font info for 34 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  61i,13n,93p,1758b,1320s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1253,10 +1283,10 @@ amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2015basic/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2015basic/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015basic/texmf-dist/font
 s/type1/public/amsfonts/cm/cmsy5.pfb>
-Output written on presentation.pdf (11 pages, 106571 bytes).
+Output written on presentation.pdf (13 pages, 192160 bytes).
 PDF statistics:
- 145 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
- 27 named destinations out of 1000 (max. 500000)
- 67 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 
